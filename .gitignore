@@ -1,0 +1,11 @@
+.git
+.idea
+out/
+input/
+data/
+*.zip
+*.txt
+*.json
+__pycache__/
+predictor/model/
+
