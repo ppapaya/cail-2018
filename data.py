@@ -95,4 +95,28 @@ def getlabel(d, kind):
     return label
 
 
+def read_trainData(path, record_num=None):
+    fin = open(path, 'r', encoding='utf8')
+
+    alltext = []
+
+    accu_label = []
+    law_label = []
+    time_label = []
+
+    line = fin.readline()
+    count = 0
+    while line:
+        if record_num is not None and count > record_num:
+            break
+        d = json.loads(line)
+        alltext.append(d['fact'])
+        accu_label.append(getlabel(d, 'accu'))
+        law_label.append(getlabel(d, 'law'))
+        time_label.append(getlabel(d, 'time'))
+        line = fin.readline()
+        count += 1
+    fin.close()
+
+    return alltext, accu_label, law_label, time_label
 

@@ -3,9 +3,8 @@
 out/
 input/
 data/
+model/
 *.zip
 *.txt
 *.json
 __pycache__/
-predictor/model/
-
